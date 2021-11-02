@@ -1,0 +1,346 @@
+* body, * html{
+    padding: 0;
+    margin: 0;
+    background: #292D38 !important;
+    background-size: cover !important;
+}
+
+/*desativa a seleção de texto do usuário*/
+* input, * label, * h1, * h2, * h3, * h4, * h5, * img{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*nav*/
+nav{
+   display: block;
+   background: #151726; 
+   padding: 5px 0 1px 0;
+    margin-bottom: 20px;
+}
+
+nav .container-xxl{
+    position: relative;
+}
+
+nav h1 img{
+    width: 125px;
+}
+
+nav .controls-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
+
+/*developer*/
+nav .developer{
+    padding: 8px 0 0 0;
+    z-index: 1;
+    color: #FFF;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #151726;
+}
+
+nav .developer p{
+    font-size: 13px;
+    margin: 0 0 9px 0;
+}
+
+nav .developer p a{
+    color: #eee;
+    text-decoration: none;
+}
+
+nav .developer p a:hover{
+    color: #1DFFF1;
+}
+
+/*buttons nav*/
+nav .controls-nav .add-image{
+    display: none;
+}
+
+nav .controls-nav .btn-add-image{
+    background: none;
+    color: #FFF;
+    padding: 7px 18px 7px 18px;
+    margin-right: 15px;
+    border: none;
+    outline: 1px solid #ccc !important;
+    border-radius: 4px;
+}
+
+nav .developer ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav .developer ul li{
+    display: inline
+}
+
+
+nav .controls-nav .btn-add-image svg,
+nav .controls-nav .btn-download-image svg{
+    font-size: 20px;
+    margin: -5px 3px 0 0;
+}
+
+nav .controls-nav .btn-add-image:hover{
+    background: #292D38;
+    box-shadow: 1px 9px 15px rgba(0,0,0,.15);
+}
+
+nav .controls-nav .btn-download-image{
+    padding: 8px 18px 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #1DFFF1;
+    color: #111;
+    border:none;
+}
+
+nav .controls-nav .btn-download-image:hover{
+    background: #33E3D9;
+    box-shadow: 1px 9px 15px rgba(0,0,0,.15);
+}
+
+
+/*style page*/
+.pagina-principal .desk-area .clique_fora{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.pagina-principal .left .edit-desk, 
+.pagina-principal .right .controls{
+    border-radius: 7px;   
+}
+
+.pagina-principal .desk-area{
+    position: relative;
+}
+
+.pagina-principal .desk-area .edit-desk{
+    position: relative;
+    background: #fff !important;
+    height: 82vh;
+    overflow: hidden;
+}
+
+.pagina-principal .right .controls{
+    display: block;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/*estilo das imagens*/
+.pagina-principal .desk-area img{
+    cursor: grab;
+    position: absolute;
+    object-fit: cover;
+}
+
+/*estilo dos controles*/
+.pagina-principal .right .controls{
+    color: #FFF;
+    padding: 15px;
+}
+
+.pagina-principal .right .controls .btn_cortar{
+    width: 100%;
+    margin-top: 3px;
+    padding: 10px 8px 12px 8px;
+    border-radius: 7px;
+    background: #888;
+    color: #FFF;
+    border: none;
+    font-size: 1em;
+}
+
+.pagina-principal .right .controls .btn_cortar svg{
+    font-size: 26px;
+    margin: -5px 0 0 0;
+}
+
+.pagina-principal .right .controls .btn_cortar:disabled,
+.pagina-principal .right .controls .btn_cortar:hover:disabled,
+.pagina-principal .area-btns-tamanho .btn-reduzir:disabled,
+.pagina-principal .area-btns-tamanho .btn-aumentar:disabled,
+.pagina-principal .area-btns-tamanho .btn-reduzir:hover:disabled,
+.pagina-principal .area-btns-tamanho .btn-aumentar:hover:disabled{
+    opacity: 50%;
+    box-shadow: none;
+    background: #888;
+    cursor: no-drop;
+}
+
+.pagina-principal .right .controls .btn_cortar:hover,
+.pagina-principal .area-btns-tamanho .btn-reduzir:hover,
+.pagina-principal .area-btns-tamanho .btn-aumentar:hover{
+    background: #999;
+    box-shadow: 1px 10px 15px rgba(0,0,0,.18);
+}
+
+.pagina-principal .right label{
+    margin-bottom: 4px;
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+/*btn-tamanho-imagem*/
+.pagina-principal .right input{
+    text-align: center;
+    color: #FFF;
+    border: none;
+    background: #444;
+    border-radius: 7px;
+}
+
+.pagina-principal .area-btns-tamanho{
+    display: grid;
+    grid-template-columns:  auto auto auto;
+    margin-top: 7px;
+}
+
+.pagina-principal .area-btns-tamanho .btn-reduzir,
+.pagina-principal .area-btns-tamanho .btn-aumentar{
+    padding: 0px 15px 6px 15px;
+    background: #888;
+    color: #FFF;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.5em;
+}
+
+.pagina-principal .area-btns-tamanho .btn-aumentar{
+    margin-left: 15px;
+}
+
+.pagina-principal .area-btns-tamanho .btn-reduzir{
+    margin-right: 15px;
+    padding: 0px 18px 6px 18px;
+}
+
+
+/*camadas*/
+.pagina-principal .area-camadas label{
+    margin: 12px 0 0 0;
+}
+
+.pagina-principal .camadas{
+    display: inline-block;
+    overflow-y: auto;
+    background: #444;
+    width: 100%;
+    height: 68.2vh;
+    margin-top: 6px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.pagina-principal .camadas .camada_item{
+    cursor: pointer;
+    height: 90px;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 40% auto auto;
+    background: #333;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.pagina-principal .camadas .camada_item .btn_deleta_camada{
+    margin-right: 20px;
+}
+
+.pagina-principal .camadas .camada_item .btn_deleta_camada,
+.pagina-principal .camadas .camada_item .btn_para_cima,
+.pagina-principal .camadas .camada_item .btn_para_baixo{
+    border-radius: 7px;
+    background: #888;
+    border: none;
+}
+
+.pagina-principal .camadas .camada_item .btn_deleta_camada:hover,
+.pagina-principal .camadas .camada_item .btn_para_cima:hover,
+.pagina-principal .camadas .camada_item .btn_para_baixo:hover{
+    background: #999;
+    box-shadow: 1px 10px 15px rgba(0,0,0,.18);
+}
+
+.pagina-principal .camadas .camada_item .btn_deleta_camada svg{
+    color: #FFF;
+    font-size: 30px;
+}
+
+.pagina-principal .camadas .camada_item .btn_para_cima,
+.pagina-principal .camadas .camada_item .btn_para_baixo{
+    padding: 0 20px 5px 20px;
+    width: 100%;
+    border: none;
+}
+
+.pagina-principal .camadas .camada_item .btn_para_baixo{
+    margin: 10px 0 0 0;
+}
+
+.pagina-principal .camadas .camada_item .btn_para_cima svg,
+.pagina-principal .camadas .camada_item .btn_para_baixo svg{
+    color: #FFF;
+    font-size: 18px;
+}
+
+.pagina-principal .camadas .camada_item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*modal recorte*/
+.modal{
+    width: max-content;
+}
+
+.modal .janela-area-de-recorte{
+    position: relative;
+    outline: 5px solid #fff;
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    justify-content: center;
+    background: #444;
+}
+
+.modal .btn_salvar_corte{
+    border-radius: 7px;
+    background: #25a18e !important;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    box-shadow: none !important;
+}
+
+.modal .btn_salvar_corte:hover{
+    background: #16db65 !important;
+    color: #333;
+}
+
+.modal .btn_cancelar_corte{
+    border-radius: 7px;
+    box-shadow: none !important;
+}
