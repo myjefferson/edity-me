@@ -3,12 +3,22 @@ var id = 0;
 var id_selecionado;
 var src_img_selecionada;
 
-//Mascaras de input
+//Mask input
 $(document).ready(function(){
     $('.controls .value-tam').mask('000');
 })
 
-//Adicionar imagens
+//Message before refresh
+window.onbeforeunload = function(){
+    return "Tem certeza que deseja sair? Todas as edições não serão perdidas se você sair."
+}
+
+//Desativa o arraste/save do site nas imagens
+window.ondragstart = function() { 
+    return false; 
+}
+
+//Add imagens
 var area_camadas = $(".camadas")
 function addImage(input){
     if(input.files && input.files[0]){
@@ -62,7 +72,7 @@ function addImage(input){
     id++;
 }
 
-//Mover imagem
+//Move image
 function moveImage(id){
     var mousePosition;
     var offset = [0,0];

@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="icon" href="./assets/img/favicon.svg">
 
         <!--Iconify-->
         <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
@@ -32,7 +33,7 @@
         
         <nav>
             <div class="container-xxl">
-                <h1 class="title-page"><img src="assets/img/logo.svg" alt="EdityMe"></h1>
+                <h1 class="title-page"><img src="assets/img/logo.svg" alt="EdityMe" title="EdityMe"></h1>
                 <div class="controls-nav">
                     <input type="file" class="add-image" onchange="addImage(this)" accept=".jpg, .png, .jpeg, .bmp, .tif, .tiff|image/*">
                     <button onclick="$('.add-image').click()" class="btn-add-image"><span class="iconify" data-icon="carbon:add-filled"></span> Adicionar imagem</button>
@@ -65,10 +66,6 @@
                                     <input type="text" class="form-control value-tam" disabled>
                                     <button onclick="aumentarImagem(id_selecionado)" class="btn-aumentar" disabled>+</button>
                                 </div>
-                                <script>
-                                    //Define uma mascara para apenas números
-                                    
-                                </script>
                             </div>
                             <div class="col-6">
                                 <label>Recorte de imagem</label>
@@ -89,7 +86,7 @@
             <div id="divhidden"></div>
         </div>
 
-        <!-- Modal Cortar Imagem-->
+        <!-- Modal Cut Image-->
         <div class="modal fade" id="modalCrop" tabindex="-1" role="dialog" aria-labelledby="modalCropTitle" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -97,7 +94,7 @@
                         <h5 class="modal-title" id="modalCropTitle">Cortar imagem</h5>
                     </div>
                     <div class="modal-body janela-area-de-recorte">
-                        <!--Apresentação das imagens para recorte-->
+                        <!--imagens para recorte-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn_cancelar_corte" data-dismiss="modal" class="close" onclick="$('.modal').modal('hide')">Cancelar</button>
@@ -107,23 +104,7 @@
             </div>
         </div>
         
-        <script>
-            //Mensagem antes do refresh e fechar a página
-            window.onbeforeunload = function(){
-                return "Tem certeza que deseja sair? Todas as edições não serão perdidas se você sair."
-            }
-            
-            //Desativa o arraste/save do site nas imagens
-            window.ondragstart = function() { 
-                return false; 
-            }
-        </script>
-
-        <script>
-            
-        </script>
-        
-        <!--Funções Gerais-->
+        <!--General Functions-->
         <script src="./assets/js/functions/functions.js"></script>
     </body>
 </html>
