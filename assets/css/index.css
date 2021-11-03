@@ -131,6 +131,13 @@ nav .controls-nav .btn-download-image:hover{
     border-radius: 7px;   
 }
 
+/*estilo das imagens*/
+.pagina-principal .desk-area img{
+    cursor: grab;
+    position: absolute;
+    object-fit: cover;
+}
+
 .pagina-principal .desk-area{
     position: relative;
 }
@@ -140,23 +147,14 @@ nav .controls-nav .btn-download-image:hover{
     background: #fff !important;
     height: 82vh;
     overflow: hidden;
+    margin: 0;
 }
 
-.pagina-principal .right .controls{
-    display: block;
-    height: 90vh;
-    overflow: hidden;
-}
-
-/*estilo das imagens*/
-.pagina-principal .desk-area img{
-    cursor: grab;
-    position: absolute;
-    object-fit: cover;
-}
 
 /*estilo dos controles*/
 .pagina-principal .right .controls{
+    display: block;
+    overflow: hidden;
     color: #FFF;
     padding: 15px;
 }
@@ -245,9 +243,9 @@ nav .controls-nav .btn-download-image:hover{
 .pagina-principal .camadas{
     display: inline-block;
     overflow-y: auto;
-    background: #444;
+    background: #535669;
     width: 100%;
-    height: 68.2vh;
+    height: 68.5vh;
     margin-top: 6px;
     border-radius: 7px;
     padding: 10px;
@@ -306,6 +304,7 @@ nav .controls-nav .btn-download-image:hover{
 }
 
 .pagina-principal .camadas .camada_item img{
+    overflow: hidden;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -343,4 +342,44 @@ nav .controls-nav .btn-download-image:hover{
 .modal .btn_cancelar_corte{
     border-radius: 7px;
     box-shadow: none !important;
+}
+
+@media only screen and (max-height: 880px){
+    .pagina-principal .desk-area .edit-desk{
+        height: 80vh;
+    }
+
+    .pagina-principal .right .camadas{
+        height: 65vh;
+    }
+}
+
+@media only screen and (max-height: 810px){
+    .pagina-principal .desk-area .edit-desk{
+        height: 80vh;
+    }
+
+    .pagina-principal .right .camadas{
+        height: 63.5vh;
+    }
+}
+
+@media only screen and (max-height: 740px){
+    .pagina-principal .desk-area .edit-desk{
+        height: 79vh;
+    }
+
+    .pagina-principal .right .camadas{
+        height: 58vh;
+    }
+}
+
+@media only screen and (max-height: 700px){
+    .pagina-principal .desk-area .edit-desk{
+        height: 75vh;
+    }
+
+    .pagina-principal .right .camadas{
+        height: 53vh;
+    }
 }

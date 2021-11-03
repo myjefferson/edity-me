@@ -34,8 +34,8 @@ function addImage(input){
                         z-index: 1;
                         left: 50%;
                         top: 50%;
-                        translate: -50% -50%;
-                        -webkit-translate: -50% -50%;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
                     "
                     onmousedown="moveImage('${id}')"
                     draggable="false"
@@ -250,8 +250,12 @@ function salvarImagem(){
     //Desseleciona os itens
     desSelect()
 
+    function idRandom(){
+        return Math.floor(Math.random() * 9999);
+    }
+
     html2canvas($("#edit-desk")[0]).then(function(canvas) {
-        $(".pagina-principal").append("<a class='download_image' download='minha_capa.jpg' href="+canvas.toDataURL()+">Baixar</a>")
+        $(".pagina-principal").append(`<a class='download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
         $(".download_image")[0].click()
         $(".download_image").remove();
     });
