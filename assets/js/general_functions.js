@@ -186,11 +186,11 @@ function lockUnlock(){
     boolean_lockun = $(".check-lock-unlock").prop("checked")
 
     if(boolean_lockun == true){
-        btn_lock_unlock.html('<span class="iconify" data-icon="fa-solid:lock-open"></span>')
-        btn_lock_unlock.attr("title", "Proporções não restringidas")
-    }else{
         btn_lock_unlock.html('<span class="iconify" data-icon="fa-solid:lock"></span>')
         btn_lock_unlock.attr("title", "Proporções restringidas")
+    }else{
+        btn_lock_unlock.html('<span class="iconify" data-icon="fa-solid:lock-open"></span>')
+        btn_lock_unlock.attr("title", "Proporções não restringidas")
     }
 }
 
