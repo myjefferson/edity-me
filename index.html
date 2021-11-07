@@ -62,9 +62,14 @@
                             <div class="col-6">
                                 <label>Tamanho</label>
                                 <div class="area-btns-tamanho">
-                                    <button onclick="reduzirImagem(id_selecionado)" class="btn-reduzir" disabled>-</button>
-                                    <input type="text" class="form-control value-tam" disabled>
-                                    <button onclick="aumentarImagem(id_selecionado)" class="btn-aumentar" disabled>+</button>
+                                    <input type="text" class="form-control value-tam-width" onkeyup="sizeImageWidth(id_selecionado)" disabled>
+                                    <button class="btn-lock-unlock" onclick="$('.check-lock-unlock').click(); lockUnlock()" title="Selecione a imagem que deseja definir o tamanho" disabled><span class="iconify" data-icon="fa-solid:lock"></span></button>
+                                    <input type="checkbox" class="check-lock-unlock" style="display: none;" checked>
+                                    <input type="text" class="form-control value-tam-height" onkeyup="sizeImageHeight(id_selecionado)" disabled>
+                                    <script>
+                                        $('.value-tam-width').mask('000');
+                                        $('.value-tam-height').mask('000');
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -105,6 +110,6 @@
         </div>
         
         <!--General Functions-->
-        <script src="./assets/js/functions/functions.js"></script>
+        <script src="./assets/js/general_functions.js"></script>
     </body>
 </html>

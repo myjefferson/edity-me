@@ -1,7 +1,13 @@
+//GENERAL VARS
 var edit_desk = $(".edit-desk")
 var id = 0;
 var id_selecionado;
 var src_img_selecionada;
+
+//SELECT ITENS
+var inputTamWidth = $(`.controls .value-tam-width`)
+var inputTamHeight = $(`.controls .value-tam-height`)
+var btn_lock_unlock = $(".btn-lock-unlock")
 
 //Mask input
 $(document).ready(function(){
@@ -29,8 +35,8 @@ function addImage(input){
                     id="${id}"
                     src="${e.target.result}"    
                     style="
-                        height: 400px; 
-                        width: auto; 
+                        width: 500px; 
+                        height: auto; 
                         z-index: 1;
                         left: 50%;
                         top: 50%;
@@ -68,8 +74,7 @@ function addImage(input){
         var img = input.value;
         $(input).next().attr('src', img)
     }
-    
-    id++;
+    id++; //New id img
 }
 
 //Move image
@@ -132,26 +137,25 @@ function paraBaixo(id){
     img.after(img_de_cima) //insere na frente
 }
 
-
 //Imagem Selecionada e Desselecionada
-var tamImagem = $(".controls .value-tam");
-tamImagem.prop("disabled", true);
-
 function selectedImage(id){
+    desSelect() //Desselecionar/reseta a seleção tirando a borda vermelha
+    
     var img = $(`.edit-desk img#${id}`);
     id_selecionado = id;
     src_img_selecionada = img.attr("src")
     
-    //Desselecionar/reseta a seleção tirando a borda vermelha
-    desSelect()
-
     //Refresh do botão de cortar imagem
     $(".btn_recorte_imagem").html(`<button onclick="cortarImagem()" type="button" class="btn btn-primary btn_cortar" data-toggle="modal" data-target="#modalCropCenter"><span class="iconify" data-icon="mdi:crop"></span> Cortar Imagem</button>`)
 
     //campo/imput do tamanho da imagem
-    tamImagem.val(img.height())
-    $(`.btn-reduzir`).prop("disabled", false)
-    $(`.btn-aumentar`).prop("disabled", false)
+    inputTamWidth.val(img.width())
+    inputTamHeight.val(img.height())
+
+    $(`.value-tam-height`).prop("disabled", false)
+    $(`.value-tam-width`).prop("disabled", false)
+    $(`.btn-lock-unlock`).prop("disabled", false)
+    lockUnlock()
 
     //append no modal de recorte
     $(".modal .janela-area-de-recorte").html(`<img src="${src_img_selecionada}" class="imagem-recorte">`)
@@ -161,39 +165,65 @@ function selectedImage(id){
 }
 
 function desSelect(){
-    $(`.btn-reduzir`).prop("disabled", true)
-    $(`.btn-aumentar`).prop("disabled", true)
+    $(`.value-tam-height`).prop("disabled", true)
+    $(`.value-tam-width`).prop("disabled", true)
+    $(`.btn-lock-unlock`).prop("disabled", true)
     
     $(".edit-desk img").css({"border": "none"})
     $(`.camada_item`).css({"border": "none"})
     $(".btn_recorte_imagem").html('<button class="btn_cortar" disabled title="Selecione a imagem para cortar"><span class="iconify" data-icon="mdi:crop"></span> Cortar Imagem</button>')
+    btn_lock_unlock.attr("title", "Selecione a imagem que deseja definir o tamanho")
+    
     //campo/imput do tamanho da imagem
-    tamImagem.val("")
+    inputTamHeight.val("")
+    inputTamWidth.val("")
 }
 
 /*Aumentar imagem*/
-function aumentarImagem(id){
-    var img = $(`.edit-desk img#${id}`);
-    tamImagem.prop("disabled", true)
+var boolean_lockun = true;
 
-    //Atualiza o input
-    tamImagem.val(img.height())
+function lockUnlock(){
+    boolean_lockun = $(".check-lock-unlock").prop("checked")
 
-    img.css({
-        "height": `${img.height() + 5}px`
-    })
+    if(boolean_lockun == true){
+        btn_lock_unlock.html('<span class="iconify" data-icon="fa-solid:lock-open"></span>')
+        btn_lock_unlock.attr("title", "Proporções não restringidas")
+    }else{
+        btn_lock_unlock.html('<span class="iconify" data-icon="fa-solid:lock"></span>')
+        btn_lock_unlock.attr("title", "Proporções restringidas")
+    }
 }
 
-function reduzirImagem(id){
+function sizeImageWidth(id){
     var img = $(`.edit-desk img#${id}`);
-    tamImagem.prop("disabled", true)
 
-    //Atualiza o input
-    tamImagem.val(img.height())
+    if(boolean_lockun == true){
+        img.css({
+            "width": `${inputTamWidth.val()}px`,
+            "height": `auto`
+        })
+        inputTamHeight.val(img.height())
+    }else{
+        img.css({
+            "width": `${inputTamWidth.val()}px`
+        })
+    }
+}
 
-    img.css({
-        "height": `${img.height() - 5}px`
-    })
+function sizeImageHeight(id){
+    var img = $(`.edit-desk img#${id}`);
+
+    if(boolean_lockun == true){
+        img.css({
+            "width": `auto`,
+            "height": `${inputTamHeight.val()}px`
+        })
+        inputTamWidth.val(img.width())
+    }else{
+        img.css({
+            "height": `${inputTamHeight.val()}px`
+        })
+    }
 }
 
 /*Apagar Imagem*/

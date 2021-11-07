@@ -6,7 +6,7 @@
 }
 
 /*desativa a seleção de texto do usuário*/
-* input, * label, * h1, * h2, * h3, * h4, * h5, * img{
+* input, * label, * p, * h1, * h2, * h3, * h4, * h5, * img{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -135,7 +135,7 @@ nav .controls-nav .btn-download-image:hover{
 .pagina-principal .desk-area img{
     cursor: grab;
     position: absolute;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .pagina-principal .desk-area{
@@ -144,7 +144,7 @@ nav .controls-nav .btn-download-image:hover{
 
 .pagina-principal .desk-area .edit-desk{
     position: relative;
-    background: #fff !important;
+    background-color: #FFFFFF !important;
     height: 82vh;
     overflow: hidden;
     margin: 0;
@@ -177,10 +177,8 @@ nav .controls-nav .btn-download-image:hover{
 
 .pagina-principal .right .controls .btn_cortar:disabled,
 .pagina-principal .right .controls .btn_cortar:hover:disabled,
-.pagina-principal .area-btns-tamanho .btn-reduzir:disabled,
-.pagina-principal .area-btns-tamanho .btn-aumentar:disabled,
-.pagina-principal .area-btns-tamanho .btn-reduzir:hover:disabled,
-.pagina-principal .area-btns-tamanho .btn-aumentar:hover:disabled{
+.pagina-principal .area-btns-tamanho .btn-lock-unlock:disabled,
+.pagina-principal .area-btns-tamanho .btn-lock-unlock:hover:disabled{
     opacity: 50%;
     box-shadow: none;
     background: #888;
@@ -188,8 +186,7 @@ nav .controls-nav .btn-download-image:hover{
 }
 
 .pagina-principal .right .controls .btn_cortar:hover,
-.pagina-principal .area-btns-tamanho .btn-reduzir:hover,
-.pagina-principal .area-btns-tamanho .btn-aumentar:hover{
+.pagina-principal .area-btns-tamanho .btn-lock-unlock:hover{
     background: #999;
     box-shadow: 1px 10px 15px rgba(0,0,0,.18);
 }
@@ -212,26 +209,22 @@ nav .controls-nav .btn-download-image:hover{
 .pagina-principal .area-btns-tamanho{
     display: grid;
     grid-template-columns:  auto auto auto;
-    margin-top: 7px;
+    margin-top: 3px;
 }
 
-.pagina-principal .area-btns-tamanho .btn-reduzir,
-.pagina-principal .area-btns-tamanho .btn-aumentar{
+.pagina-principal .area-btns-tamanho .btn-lock-unlock{
     padding: 0px 15px 6px 15px;
     background: #888;
     color: #FFF;
     border: none;
     border-radius: 7px;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
-.pagina-principal .area-btns-tamanho .btn-aumentar{
-    margin-left: 15px;
-}
-
-.pagina-principal .area-btns-tamanho .btn-reduzir{
-    margin-right: 15px;
-    padding: 0px 18px 6px 18px;
+.pagina-principal .area-btns-tamanho .btn-lock-unlock{
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0px 13px 6px 13px;
 }
 
 
