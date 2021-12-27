@@ -5,7 +5,7 @@
 </h1>
 
 <p  align="center">
-    <a href="https://myjefferson.github.io/edity-me/">Visitar projeto</a>
+    <a href="https://myjefferson.github.io/edity-me/" target="_blank">Visitar projeto</a>
 </p>
 
 <h2>Sobre</h2>
