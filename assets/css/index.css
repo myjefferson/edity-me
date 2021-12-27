@@ -136,7 +136,7 @@ nav .controls-nav .btn-download-image:hover{
 
 
 /*style page*/
-.pagina-principal .desk-area .clique_fora{
+.page-init .desk-area .clique_fora{
     left: 0;
     top: 0;
     position: absolute;
@@ -144,23 +144,23 @@ nav .controls-nav .btn-download-image:hover{
     height: 100%;
 }
 
-.pagina-principal .left .edit-desk, 
-.pagina-principal .right .controls{
+.page-init .left .edit-desk, 
+.page-init .right .controls{
     border-radius: 7px;   
 }
 
 /*estilo das imagens*/
-.pagina-principal .desk-area img{
+.page-init .desk-area img{
     cursor: grab;
     position: absolute;
     object-fit: fill;
 }
 
-.pagina-principal .desk-area{
+.page-init .desk-area{
     position: relative;
 }
 
-.pagina-principal .desk-area .edit-desk{
+.page-init .desk-area .edit-desk{
     position: relative;
     background-color: #FFFFFF !important;
     height: 82vh;
@@ -170,14 +170,14 @@ nav .controls-nav .btn-download-image:hover{
 
 
 /*estilo dos controles*/
-.pagina-principal .right .controls{
+.page-init .right .controls{
     display: block;
     overflow: hidden;
     color: #FFF;
     padding: 15px;
 }
 
-.pagina-principal .right .controls .btn_cortar{
+.page-init .right .controls .btn_cortar{
     width: 100%;
     margin-top: 3px;
     padding: 10px 8px 12px 8px;
@@ -188,35 +188,35 @@ nav .controls-nav .btn-download-image:hover{
     font-size: 1em;
 }
 
-.pagina-principal .right .controls .btn_cortar svg{
+.page-init .right .controls .btn_cortar svg{
     font-size: 26px;
     margin: -5px 0 0 0;
 }
 
-.pagina-principal .right .controls .btn_cortar:disabled,
-.pagina-principal .right .controls .btn_cortar:hover:disabled,
-.pagina-principal .area-btns-tamanho .btn-lock-unlock:disabled,
-.pagina-principal .area-btns-tamanho .btn-lock-unlock:hover:disabled{
+.page-init .right .controls .btn_cortar:disabled,
+.page-init .right .controls .btn_cortar:hover:disabled,
+.page-init .area-btns-tamanho .btn-lock-unlock:disabled,
+.page-init .area-btns-tamanho .btn-lock-unlock:hover:disabled{
     opacity: 50%;
     box-shadow: none;
     background: #888;
     cursor: no-drop;
 }
 
-.pagina-principal .right .controls .btn_cortar:hover,
-.pagina-principal .area-btns-tamanho .btn-lock-unlock:hover{
+.page-init .right .controls .btn_cortar:hover,
+.page-init .area-btns-tamanho .btn-lock-unlock:hover{
     background: #999;
     box-shadow: 1px 10px 15px rgba(0,0,0,.18);
 }
 
-.pagina-principal .right label{
+.page-init .right label{
     margin-bottom: 4px;
     color: #ddd;
     font-size: 0.9em;
 }
 
 /*btn-tamanho-imagem*/
-.pagina-principal .right input{
+.page-init .right input{
     text-align: center;
     color: #FFF;
     border: none;
@@ -224,13 +224,13 @@ nav .controls-nav .btn-download-image:hover{
     border-radius: 7px;
 }
 
-.pagina-principal .area-btns-tamanho{
+.page-init .area-btns-tamanho{
     display: grid;
     grid-template-columns:  auto auto auto;
     margin-top: 3px;
 }
 
-.pagina-principal .area-btns-tamanho .btn-lock-unlock{
+.page-init .area-btns-tamanho .btn-lock-unlock{
     padding: 0px 15px 6px 15px;
     background: #888;
     color: #FFF;
@@ -239,7 +239,7 @@ nav .controls-nav .btn-download-image:hover{
     font-size: 1.7em;
 }
 
-.pagina-principal .area-btns-tamanho .btn-lock-unlock{
+.page-init .area-btns-tamanho .btn-lock-unlock{
     margin-right: 10px;
     margin-left: 10px;
     padding: 0px 13px 6px 13px;
@@ -247,11 +247,11 @@ nav .controls-nav .btn-download-image:hover{
 
 
 /*camadas*/
-.pagina-principal .area-camadas label{
+.page-init .area-camadas label{
     margin: 12px 0 0 0;
 }
 
-.pagina-principal .camadas{
+.page-init .camadas{
     display: inline-block;
     overflow-y: auto;
     background: #535669;
@@ -262,7 +262,7 @@ nav .controls-nav .btn-download-image:hover{
     padding: 10px;
 }
 
-.pagina-principal .camadas .camada_item{
+.page-init .camadas .camada_item{
     cursor: pointer;
     height: 90px;
     border-radius: 7px;
@@ -273,48 +273,48 @@ nav .controls-nav .btn-download-image:hover{
     margin-top: 10px;
 }
 
-.pagina-principal .camadas .camada_item .btn_deleta_camada{
+.page-init .camadas .camada_item .btn_deleta_camada{
     margin-right: 20px;
 }
 
-.pagina-principal .camadas .camada_item .btn_deleta_camada,
-.pagina-principal .camadas .camada_item .btn_para_cima,
-.pagina-principal .camadas .camada_item .btn_para_baixo{
+.page-init .camadas .camada_item .btn_deleta_camada,
+.page-init .camadas .camada_item .btn_para_cima,
+.page-init .camadas .camada_item .btn_para_baixo{
     border-radius: 7px;
     background: #888;
     border: none;
 }
 
-.pagina-principal .camadas .camada_item .btn_deleta_camada:hover,
-.pagina-principal .camadas .camada_item .btn_para_cima:hover,
-.pagina-principal .camadas .camada_item .btn_para_baixo:hover{
+.page-init .camadas .camada_item .btn_deleta_camada:hover,
+.page-init .camadas .camada_item .btn_para_cima:hover,
+.page-init .camadas .camada_item .btn_para_baixo:hover{
     background: #999;
     box-shadow: 1px 10px 15px rgba(0,0,0,.18);
 }
 
-.pagina-principal .camadas .camada_item .btn_deleta_camada svg{
+.page-init .camadas .camada_item .btn_deleta_camada svg{
     color: #FFF;
     font-size: 30px;
 }
 
-.pagina-principal .camadas .camada_item .btn_para_cima,
-.pagina-principal .camadas .camada_item .btn_para_baixo{
+.page-init .camadas .camada_item .btn_para_cima,
+.page-init .camadas .camada_item .btn_para_baixo{
     padding: 0 20px 5px 20px;
     width: 100%;
     border: none;
 }
 
-.pagina-principal .camadas .camada_item .btn_para_baixo{
+.page-init .camadas .camada_item .btn_para_baixo{
     margin: 10px 0 0 0;
 }
 
-.pagina-principal .camadas .camada_item .btn_para_cima svg,
-.pagina-principal .camadas .camada_item .btn_para_baixo svg{
+.page-init .camadas .camada_item .btn_para_cima svg,
+.page-init .camadas .camada_item .btn_para_baixo svg{
     color: #FFF;
     font-size: 18px;
 }
 
-.pagina-principal .camadas .camada_item img{
+.page-init .camadas .camada_item img{
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -353,57 +353,4 @@ nav .controls-nav .btn-download-image:hover{
 .modal .btn_cancelar_corte{
     border-radius: 7px;
     box-shadow: none !important;
-}
-
-/*media de incompatibilidade*/
-@media only screen and (max-width: 1149px){
-    .incompatibility{
-        display: flex;
-    }
-}
-
-@media only screen and (max-height: 575px){
-    .incompatibility{
-        display: flex;
-    }
-}
-
-@media only screen and (max-height: 880px){
-    .pagina-principal .desk-area .edit-desk{
-        height: 80vh;
-    }
-
-    .pagina-principal .right .camadas{
-        height: 65vh;
-    }
-}
-
-@media only screen and (max-height: 810px){
-    .pagina-principal .desk-area .edit-desk{
-        height: 80vh;
-    }
-
-    .pagina-principal .right .camadas{
-        height: 63.5vh;
-    }
-}
-
-@media only screen and (max-height: 740px){
-    .pagina-principal .desk-area .edit-desk{
-        height: 79vh;
-    }
-
-    .pagina-principal .right .camadas{
-        height: 58vh;
-    }
-}
-
-@media only screen and (max-height: 700px){
-    .pagina-principal .desk-area .edit-desk{
-        height: 75vh;
-    }
-
-    .pagina-principal .right .camadas{
-        height: 53vh;
-    }
 }
