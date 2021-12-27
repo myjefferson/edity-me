@@ -14,7 +14,7 @@
     <li>HTML2Canvas</li>
 </ul>
 
-<h3>Cores Utilizadas</h3>
+<h1>Cores Utilizadas</h1>
 
 | Cores - Hex |
 |-------------| 
