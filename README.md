@@ -1,10 +1,11 @@
 <h3 align="center">Bem vindo ao</h3>
-<h1 align="center"><img src="./assets/img/logo.svg" alt="EdityMe"></h1>
+<h1 align="center"><img src="./assets/img/logo.svg" alt="EdityMe"><h1>
+<a href="https://myjefferson.github.io/edity-me/" align="center">Visitar projeto</a>
 <h2>Sobre</h2>
 <p>O EdityMe é um editor de imagens com funcionalidades básicas de edição como: mover, cortar, redimensionar e organizar em camadas. <strong>Acompanhe uma prévia a seguir.</strong></p>
 <img src="./assets/screens/preview.gif" alt="Prévia EdityMe">
 
-<h1>Tecnologias e Frameworks Utilizados</h1>
+<h2>Tecnologias e Frameworks Utilizados</h2>
 <ul>
     <li>HTML</li>
     <li>CSS</li>
@@ -14,7 +15,7 @@
     <li>HTML2Canvas</li>
 </ul>
 
-<h1>Cores Utilizadas</h1>
+<h2>Cores Utilizadas</h2>
 
 | Cores - Hex |
 |-------------| 
