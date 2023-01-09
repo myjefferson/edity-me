@@ -228,7 +228,7 @@ function salvarImagem(){
 
     html2canvas($("#edit-desk")[0]).then(function(canvas) {
         $(".page-init").append(`<a class='anchor_download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
-        $(".anchor_download_image").click()
+        $(".anchor_download_image")[0].click()
         $(".anchor_download_image").remove()        
     });
 
