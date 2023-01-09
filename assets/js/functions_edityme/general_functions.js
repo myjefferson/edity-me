@@ -217,7 +217,7 @@ function salvarCorte(id){
 function salvarImagem(){
     //Oculta os botões
     $(".btn-add-image").hide()
-    $(".btn-salvar-image").hide()
+    $(".btn-download-image").hide()
     
     //Desseleciona os itens
     desSelect()
@@ -227,9 +227,9 @@ function salvarImagem(){
     }
 
     html2canvas($("#edit-desk")[0]).then(function(canvas) {
-        $(".pagina-principal").append(`<a class='download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
-        $(".btn-download-image").click()
-        $(".btn-download-image").remove();
+        $(".pagina-principal").append(`<a class='a_download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
+        $(".a_download_image").click()
+        $(".a_download_image").hide()
     });
 
     //Seleciona a imagem novamente
@@ -237,5 +237,5 @@ function salvarImagem(){
 
     //Mostra os botões
     $(".btn-add-image").show()
-    $(".btn-salvar-image").show()
+    $(".btn-download-image").show()
 }
