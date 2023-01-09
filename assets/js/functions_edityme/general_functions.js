@@ -227,12 +227,9 @@ function salvarImagem(){
     }
 
     html2canvas($("#edit-desk")[0]).then(function(canvas) {
-        $(".pagina-principal").append(`<a class='a_download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
-        setInterval(function () {
-            $(".a_download_image").click()
-            $(".a_download_image").remove()
-        }, 500);
-        
+        $(".page-init").append(`<a class='anchor_download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
+        $(".anchor_download_image").click()
+        $(".anchor_download_image").remove()        
     });
 
     //Seleciona a imagem novamente
