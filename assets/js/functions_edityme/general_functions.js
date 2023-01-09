@@ -228,8 +228,8 @@ function salvarImagem(){
 
     html2canvas($("#edit-desk")[0]).then(function(canvas) {
         $(".pagina-principal").append(`<a class='a_download_image' download='EditMe_Image_${idRandom()}.jpg' href="${canvas.toDataURL()}">Baixar</a>`)
-        $(".a_download_image").click()
-        $(".a_download_image").hide()
+        $(".a_download_image")[0].click()
+        $(".a_download_image").remove()
     });
 
     //Seleciona a imagem novamente
