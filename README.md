@@ -28,10 +28,10 @@
 
 | Cores - Hex |
 |-------------| 
-| ![#1dfff1](https://placehold.co/15x15/1dfff1/1dfff1.png) `#1DFFF1` |
-| ![#151726](https://placehold.co/15x15/151726/151726.png) `#151726` |
-| ![#292B38](https://placehold.co/15x15/292B38/292B38.png) `#292B38` |
-| ![#535669](https://placehold.co/15x15/535669/535669.png) `#535669` |
+| ![#1dfff1](https://placehold.co/16x16/1dfff1/1dfff1.png) `#1DFFF1` |
+| ![#151726](https://placehold.co/16x16/151726/151726.png) `#151726` |
+| ![#292B38](https://placehold.co/16x16/292B38/292B38.png) `#292B38` |
+| ![#535669](https://placehold.co/16x16/535669/535669.png) `#535669` |
 
 <p align="center">
     Desenvolvido com 💚 por 
