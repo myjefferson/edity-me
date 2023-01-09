@@ -1,7 +1,7 @@
 <h3 align="center">Bem vindo ao</h3>
 
 <h1 align="center">
-    <img src="./assets/img/logo.svg" alt="EdityMe">
+    <img width="220px" src="./assets/img/logo.svg" alt="EdityMe">
 </h1>
 
 <p  align="center">
