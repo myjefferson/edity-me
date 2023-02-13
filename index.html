@@ -1,0 +1,126 @@
+<!--
+    Developed with love by - Jefferson Carvalho
+    github - github.com/myjefferson
+-->
+
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="stylesheet" href="./assets/css/media.css">
+        <link rel="icon" href="./assets/img/favicon.svg">
+
+        <!--Iconify-->
+        <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+        <!--Framework CSS Bootstrap-->
+        <link rel="stylesheet" href="./assets/js/bootstrap/css/bootstrap.min.css">
+        <!--Framework JS Bootstrap-->
+        <script src="./assets/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!--Framework JS jQuery-->
+        <script src="./assets/js/jquery/js/jquery.slim-3.6.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <!--Framework Js CropperJS-->
+        <link  href="./assets/js/cropperjs/cropper.css" rel="stylesheet">
+        <script src="./assets/js/cropperjs/cropper.js"></script>
+        <!--Framework JS html2canvas-->
+        <script type="text/javascript" src="./assets/js/html2canvas/html2canvas.js"></script>
+
+        <title>EdityMe | Bem-vindo(a)</title>
+    </head>
+    <body>
+        <noscript>Você precisa de um navegador com JavaScript</noscript>
+        <div class="incompatibility">
+            <div>
+                <h3>(Por enquanto) A resolução da tela não é compatível para a utilização do <b>EdityMe</b>.</h3>
+                <h5>Se possível, utilize este site no seu computador. Obrigado.</h5>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container-fluid">
+                <h1 class="title-page"><img src="assets/img/logo.svg" alt="EdityMe" title="EdityMe by Jefferson Carvalho"></h1>
+                <div class="controls-nav">
+                    <input type="file" class="add-image" onchange="addImage(this)" accept=".jpg, .png, .jpeg, .bmp, .tif, .tiff|image/*">
+                    <button onclick="$('.add-image').click()" class="btn-add-image"><span class="iconify" data-icon="carbon:add-filled"></span> Adicionar imagem</button>
+                    <button onclick="salvarImagem()" class="btn-download-image"><span class="iconify" data-icon="fe:download"></span> Baixar imagem</button>
+                </div>
+            </div>
+            <div class="developer">
+                <!--<ul>
+                    <li><a href="https://github.com/myjefferson" rel="noreferrer" target="_blank"><img src={github} alt="GitHub"/></a></li>
+                    <li><a href="https://www.linkedin.com/in/jefferson-carvalho" rel="noreferrer" target="_blank"><img src={linkedin} alt="LinkedIn"/></a></li>
+                </ul>-->
+                <p>Desenvolvido com 💜 por <a href="https://github.com/myjefferson" target="_blank"><strong>Jefferson Carvalho</strong></a>, <!--Usando --- <img id="img-reactjs" src={reactjs} alt="ReactJS" />.--> Veja o código no <a href="https://github.com/myjefferson/edity-me" target="_blank"><strong>Github</strong>.</a></p>
+            </div>
+        </nav>
+
+        <div class="container-fluid page-init">
+            <div class="row">
+                <div class="col-xxl-9 col-md-8 col-sm-12 left desk-area">
+                    <div id="edit-desk" class="edit-desk">
+                    </div>
+                    <div class="clique_fora" onclick="desSelect()"></div>
+                </div>
+                <div class="col-xxl-3 col-md-4 col-sm-12 right">
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-6">
+                                <label>Tamanho</label>
+                                <div class="area-btns-tamanho">
+                                    <input type="text" class="form-control value-tam-width" onkeyup="sizeImageWidth(id_selecionado)" disabled>
+                                    <button class="btn-lock-unlock" onclick="$('.check-lock-unlock').click(); lockUnlock()" title="Selecione a imagem que deseja definir o tamanho" disabled><span class="iconify" data-icon="fa-solid:lock"></span></button>
+                                    <input type="checkbox" class="check-lock-unlock" style="display: none;" checked>
+                                    <input type="text" class="form-control value-tam-height" onkeyup="sizeImageHeight(id_selecionado)" disabled>
+                                    <script>
+                                        $('.value-tam-width').mask('000');
+                                        $('.value-tam-height').mask('000');
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Recorte de imagem</label>
+                                <div class="btn_recorte_imagem">
+                                    <button class="btn_cortar" disabled title="Selecione a imagem para cortar"><span class="iconify" data-icon="mdi:crop"></span> Cortar Imagem</button>
+                                </div>
+                            </div>
+                            <div class="col-12 area-camadas">
+                                <label>Camadas</label>
+                                <div class="camadas">
+                                    <!--'Append' layers-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="divhidden"></div>
+        </div>
+
+        <!-- Modal Cut Image-->
+        <div class="modal fade" id="modalCrop" tabindex="-1" role="dialog" aria-labelledby="modalCropTitle" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCropTitle">Cortar imagem</h5>
+                    </div>
+                    <div class="modal-body janela-area-de-recorte">
+                        <!--imagens para recorte-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn_cancelar_corte" data-dismiss="modal" class="close" onclick="$('.modal').modal('hide')">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn_salvar_corte" onclick="salvarCorte(id_selecionado)">Salvar recorte</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--General Functions-->
+        <script src="./assets/js/functions_edityme/general_functions.js"></script>
+        <script src="./assets/js/functions_edityme/mouse_moves.js"></script>
+        <script src="./assets/js/functions_edityme/layers.js"></script>
+    </body>
+</html>
