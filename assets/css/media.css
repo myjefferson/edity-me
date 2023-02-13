@@ -1,0 +1,12 @@
+/*media de incompatibilidade*/
+@media only screen and (max-width: 1100px){
+    .incompatibility{
+        display: flex;
+    }
+}
+
+@media only screen and (max-height: 390px){
+    .incompatibility{
+        display: flex;
+    }
+}
