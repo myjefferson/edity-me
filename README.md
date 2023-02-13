@@ -11,7 +11,7 @@
 </p>
 
 <h2>Sobre</h2>
-<p>O EdityMe é um editor de imagens com funcionalidades básicas de edição como: mover, cortar, redimensionar e organizar em camadas. <strong>Acompanhe uma prévia a seguir.</strong></p>
+<p>O EdityMe é um editor de imagens com funcionalidades básicas de edição como: mover, cortar, redimensionar e organizar em camadas. Também, é possível baixar a imagem editada. <strong>Acompanhe uma prévia a seguir.</strong></p>
 <img align="center" src="./assets/screens/preview.gif" alt="Prévia EdityMe">
 
 <h2>Tecnologias e Frameworks Utilizados</h2>
